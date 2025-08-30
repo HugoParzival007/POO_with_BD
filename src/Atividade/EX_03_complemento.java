@@ -2,7 +2,7 @@ package Atividade;
 
 import java.util.Scanner;
 
-public class EX_03_final {
+public class EX_03_complemento {
     public static int calcularPontosEtapa(double tempoPadrao, double tempoEquipe){
         double D=Math.abs(tempoPadrao-tempoEquipe);
         int pontosEtapa;

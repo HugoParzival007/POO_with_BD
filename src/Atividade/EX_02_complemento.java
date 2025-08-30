@@ -2,7 +2,7 @@ package Atividade;
 
 import java.util.Scanner;
 
-public class EX_02_final {
+public class EX_02_complemento {
     public static void main(String[] args) {
         int idade;
         int sexo;
