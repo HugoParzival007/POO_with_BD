@@ -3,6 +3,18 @@ package Atividade;
 import java.util.Scanner;
 
 public class EX_03_final {
+    public static int calcularPontosEtapa(double tempoPadrao, double tempoEquipe){
+        double D=Math.abs(tempoPadrao-tempoEquipe);
+        int pontosEtapa;
+        if (D < 3)
+            pontosEtapa=100;
+        else if(D<=5)
+            pontosEtapa=80;
+        else {
+            pontosEtapa= (int)(80 - (D - 5)/5);
+        }
+        return pontosEtapa;
+    }
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         double tempoPadrao1;
@@ -43,39 +55,21 @@ public class EX_03_final {
             System.out.println("Digite o tempo da equipe na Etapa 3:");
             tempoEquipe3 = input.nextDouble();
 
-            D_etapa1=Math.abs(tempoPadrao1-tempoEquipe1);
-            D_etapa2=Math.abs(tempoPadrao2-tempoEquipe2);
-            D_etapa3=Math.abs(tempoPadrao3-tempoEquipe3);
-            if (D_etapa1 < 3)
-                pontosEtapa1=100;
-            else if(D_etapa1<=5)
-                pontosEtapa1=80;
-            else {
-                pontosEtapa1= (int)(80 - (D_etapa1 - 5)/5);
-            }
-            if (D_etapa2 < 3)
-                pontosEtapa2=100;
-            else if(D_etapa2<=5)
-                pontosEtapa2=80;
-            else {
-                pontosEtapa2= (int)( 80 - (D_etapa2 - 5)/5);
-            }
-            if (D_etapa3 < 3)
-                pontosEtapa3=100;
-            else if(D_etapa3<=5)
-                pontosEtapa3=80;
-            else {
-                pontosEtapa3= (int)( 80 - (D_etapa3 - 5)/5);
-            }
+            pontosEtapa1 = calcularPontosEtapa(tempoPadrao1, tempoEquipe1);
+            pontosEtapa2 = calcularPontosEtapa(tempoPadrao2, tempoEquipe2);
+            pontosEtapa3 = calcularPontosEtapa(tempoPadrao3, tempoEquipe3);
 
             totalPontosEquipe = pontosEtapa1 + pontosEtapa2 + pontosEtapa3;
             if (totalPontosEquipe > maiorPontuacaoTotal){
                 maiorPontuacaoTotal = totalPontosEquipe;
                 inscricaoVencedora = numeroInscricao;
             }
-
-
+            System.out.println("Equipe: " + numeroInscricao);
+            System.out.println("Pontos Etapa 1: " + pontosEtapa1);
+            System.out.println("Pontos Etapa 2: " + pontosEtapa2);
+            System.out.println("Pontos Etapa 3: " + pontosEtapa3);
+            System.out.println("Total de Pontos: " + totalPontosEquipe);
         }
-
+        System.out.println("A equipe vencedora é a de inscrição " + inscricaoVencedora + " com " + maiorPontuacaoTotal + " pontos!");
     }
 }
