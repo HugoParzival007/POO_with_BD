@@ -1,3 +1,5 @@
+package Atividade;
+
 import java.util.Scanner;
 
 public class E_01_final  {

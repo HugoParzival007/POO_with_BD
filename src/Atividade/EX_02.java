@@ -1,3 +1,5 @@
+package Atividade;
+
 public class EX_02 {
     public static void main(String[] args) {
         final int a=25;
